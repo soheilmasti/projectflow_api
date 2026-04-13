@@ -1,20 +1,48 @@
 # ProjectFlow API
 
-A backend project management API built with Django.
+A backend project management API built with Django and Django REST Framework.
 
-## Current Scope
-- Core project structure
-- Domain models: Project, Task, Comment
-- Django admin integration
-- Initial database migrations
+## Features
+- User registration
+- JWT authentication
+- Project CRUD
+- Task CRUD
+- User-owned data access
+- Basic automated API tests
 
-## Stack
+## Tech Stack
 - Python
 - Django
+- Django REST Framework
+- Simple JWT
 - SQLite (development)
 
-## Next Steps
-- Authentication
-- REST API endpoints
-- Permissions
-- Filtering and pagination
+## API Endpoints
+
+### Authentication
+- POST `/api/auth/register/`
+- POST `/api/auth/login/`
+- POST `/api/auth/refresh/`
+
+### Projects
+- GET `/api/projects/`
+- POST `/api/projects/`
+- GET `/api/projects/<id>/`
+- PUT `/api/projects/<id>/`
+- DELETE `/api/projects/<id>/`
+
+### Tasks
+- GET `/api/tasks/`
+- POST `/api/tasks/`
+- GET `/api/tasks/<id>/`
+- PUT `/api/tasks/<id>/`
+- DELETE `/api/tasks/<id>/`
+
+## Running the Project
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
